@@ -1,6 +1,9 @@
+
 body{
 	margin: 0;
 	padding: 0;
+	font-family: monospace;
+	-webkit-font-smoothing: antialiased;
 }
 ul{
 	list-style: none;
@@ -19,7 +22,7 @@ ul{
 
 .slide-show{
 	z-index: 1;
-	width: 2750px;
+	width: 3850px;
 	position: absolute;
 }
 
@@ -34,6 +37,7 @@ ul{
 	padding: 10px;
 	background: #000 50%;
 	opacity: 0.15;
+	filter:Alpha(Opacity="15");
 	z-index: 3;
 	position: absolute;
 	top: 50%;
@@ -41,6 +45,7 @@ ul{
 }
 .ctrl-slide:hover{
 	opacity: 0.7;
+	filter:Alpha(Opacity="70");
 }
 .slide-wrapper .prev{
 	left: 0;
@@ -63,13 +68,20 @@ ul{
 	display: inline-block;
 	width: 12px;
 	height: 12px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.3);
+	border-radius: 6px;
+	background: #fff;
+	opacity: 0.3;
+	filter: Alpha(Opacity="30");
 	cursor: pointer;
+	behavior: url(ie-css3.htc);
 }
 .slide-box ul>li:hover{
-	background: rgba(255, 255, 255, 0.7);	
+	opacity: 0.7;
+	filter: Alpha(Opacity="70");	
 }
 
-
+.slide-box ul>li.show{
+	opacity: 1;
+	filter: Alpha(Opacity="100");	
+}
 
