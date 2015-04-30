@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="assets/styles/window.css">
+</head>
+<body>
+	<button id="btn" style="z-index:2;position:relative;">toggle</button>
+	<div class="window">
+		<div class="winBar">登录</div>
+		<a class="winClose">关闭</a>
+		<div class="winBody" id="winBody"></div>
+	</div>
+	<script src="./sea.js"></script>
+	<script>
+	    seajs.use(['./assets/overlayout', './assets/ajax'],function(overlayout,ajax){
+				overlay = overlayout.overlayout;
+				$ajax = ajax;
+				});
+		document.getElementById("btn").onclick = function(){
+			overlay[overlay.display? "hide" : "show"]();
+			$ajax.get("load.html",function(html){
+					console.log(html);
+					document.getElementById("winBody").innerHTML = html;
+					});
+		};
+	</script>
+</body>
+</html>

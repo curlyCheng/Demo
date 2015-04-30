@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="load"></div>
+	<script src="sea.js"></script>
+	<script>
+		var $ajax = null;
+		seajs.use("assets/ajax.js",function(ajax){
+				$ajax = ajax;
+				});
+		window.onload = function(){
+			$ajax.get("load.html",function(html){
+					document.getElementById("load").innerHTML = html;
+					});
+		};
+	</script>
+</body>
+</html>
